@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */; };
+		F505EDAE1C7DA12200F40A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505EDAD1C7DA12200F40A21 /* ViewController.swift */; };
+		F505EDB11C7DA12200F40A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505EDAF1C7DA12200F40A21 /* Main.storyboard */; };
+		F505EDB31C7DA12200F40A21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F505EDB21C7DA12200F40A21 /* Assets.xcassets */; };
+		F505EDB61C7DA12200F40A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505EDB41C7DA12200F40A21 /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		F505EDA81C7DA12100F40A21 /* Hipstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hipstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F505EDAD1C7DA12200F40A21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F505EDB01C7DA12200F40A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F505EDB21C7DA12200F40A21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F505EDB51C7DA12200F40A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F505EDB71C7DA12200F40A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F505EDA51C7DA12100F40A21 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F505ED9F1C7DA12100F40A21 = {
+			isa = PBXGroup;
+			children = (
+				F505EDAA1C7DA12200F40A21 /* Hipstagram */,
+				F505EDA91C7DA12100F40A21 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F505EDA91C7DA12100F40A21 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F505EDA81C7DA12100F40A21 /* Hipstagram.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F505EDAA1C7DA12200F40A21 /* Hipstagram */ = {
+			isa = PBXGroup;
+			children = (
+				F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */,
+				F505EDAD1C7DA12200F40A21 /* ViewController.swift */,
+				F505EDAF1C7DA12200F40A21 /* Main.storyboard */,
+				F505EDB21C7DA12200F40A21 /* Assets.xcassets */,
+				F505EDB41C7DA12200F40A21 /* LaunchScreen.storyboard */,
+				F505EDB71C7DA12200F40A21 /* Info.plist */,
+			);
+			path = Hipstagram;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F505EDA71C7DA12100F40A21 /* Hipstagram */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F505EDBA1C7DA12200F40A21 /* Build configuration list for PBXNativeTarget "Hipstagram" */;
+			buildPhases = (
+				F505EDA41C7DA12100F40A21 /* Sources */,
+				F505EDA51C7DA12100F40A21 /* Frameworks */,
+				F505EDA61C7DA12100F40A21 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Hipstagram;
+			productName = Hipstagram;
+			productReference = F505EDA81C7DA12100F40A21 /* Hipstagram.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F505EDA01C7DA12100F40A21 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Bluyam Inc.";
+				TargetAttributes = {
+					F505EDA71C7DA12100F40A21 = {
+						CreatedOnToolsVersion = 7.2.1;
+					};
+				};
+			};
+			buildConfigurationList = F505EDA31C7DA12100F40A21 /* Build configuration list for PBXProject "Hipstagram" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F505ED9F1C7DA12100F40A21;
+			productRefGroup = F505EDA91C7DA12100F40A21 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F505EDA71C7DA12100F40A21 /* Hipstagram */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F505EDA61C7DA12100F40A21 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F505EDB61C7DA12200F40A21 /* LaunchScreen.storyboard in Resources */,
+				F505EDB31C7DA12200F40A21 /* Assets.xcassets in Resources */,
+				F505EDB11C7DA12200F40A21 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F505EDA41C7DA12100F40A21 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F505EDAE1C7DA12200F40A21 /* ViewController.swift in Sources */,
+				F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		F505EDAF1C7DA12200F40A21 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F505EDB01C7DA12200F40A21 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F505EDB41C7DA12200F40A21 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F505EDB51C7DA12200F40A21 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F505EDB81C7DA12200F40A21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F505EDB91C7DA12200F40A21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F505EDBB1C7DA12200F40A21 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hipstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluyam.Hipstagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		F505EDBC1C7DA12200F40A21 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Hipstagram/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bluyam.Hipstagram;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F505EDA31C7DA12100F40A21 /* Build configuration list for PBXProject "Hipstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F505EDB81C7DA12200F40A21 /* Debug */,
+				F505EDB91C7DA12200F40A21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F505EDBA1C7DA12200F40A21 /* Build configuration list for PBXNativeTarget "Hipstagram" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F505EDBB1C7DA12200F40A21 /* Debug */,
+				F505EDBC1C7DA12200F40A21 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F505EDA01C7DA12100F40A21 /* Project object */;
+}
