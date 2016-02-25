@@ -7,14 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A911BDF709D9340DB308596F /* Pods_Hipstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B61685E21AA79BD95A79B5F /* Pods_Hipstagram.framework */; };
 		F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */; };
 		F505EDAE1C7DA12200F40A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505EDAD1C7DA12200F40A21 /* ViewController.swift */; };
 		F505EDB11C7DA12200F40A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505EDAF1C7DA12200F40A21 /* Main.storyboard */; };
 		F505EDB31C7DA12200F40A21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F505EDB21C7DA12200F40A21 /* Assets.xcassets */; };
 		F505EDB61C7DA12200F40A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505EDB41C7DA12200F40A21 /* LaunchScreen.storyboard */; };
+		F5D8472A1C7DAA1300FE0229 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D847291C7DAA1300FE0229 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		217402321B326BC2C0934F74 /* Pods-Hipstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hipstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hipstagram/Pods-Hipstagram.debug.xcconfig"; sourceTree = "<group>"; };
+		3B61685E21AA79BD95A79B5F /* Pods_Hipstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hipstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF63A96A09AFBFA5D76D8584 /* Pods-Hipstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hipstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hipstagram/Pods-Hipstagram.release.xcconfig"; sourceTree = "<group>"; };
 		F505EDA81C7DA12100F40A21 /* Hipstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hipstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F505EDAD1C7DA12200F40A21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +27,7 @@
 		F505EDB21C7DA12200F40A21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F505EDB51C7DA12200F40A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F505EDB71C7DA12200F40A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5D847291C7DAA1300FE0229 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A911BDF709D9340DB308596F /* Pods_Hipstagram.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		77BEA31152252B3A57376F71 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3B61685E21AA79BD95A79B5F /* Pods_Hipstagram.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B855019AC87EA8A996A5C22F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				217402321B326BC2C0934F74 /* Pods-Hipstagram.debug.xcconfig */,
+				DF63A96A09AFBFA5D76D8584 /* Pods-Hipstagram.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		F505ED9F1C7DA12100F40A21 = {
 			isa = PBXGroup;
 			children = (
 				F505EDAA1C7DA12200F40A21 /* Hipstagram */,
 				F505EDA91C7DA12100F40A21 /* Products */,
+				B855019AC87EA8A996A5C22F /* Pods */,
+				77BEA31152252B3A57376F71 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,6 +83,7 @@
 				F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */,
 				F505EDAD1C7DA12200F40A21 /* ViewController.swift */,
 				F505EDAF1C7DA12200F40A21 /* Main.storyboard */,
+				F5D847291C7DAA1300FE0229 /* LoginViewController.swift */,
 				F505EDB21C7DA12200F40A21 /* Assets.xcassets */,
 				F505EDB41C7DA12200F40A21 /* LaunchScreen.storyboard */,
 				F505EDB71C7DA12200F40A21 /* Info.plist */,
@@ -71,9 +98,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F505EDBA1C7DA12200F40A21 /* Build configuration list for PBXNativeTarget "Hipstagram" */;
 			buildPhases = (
+				1EB5FF6D0D083AC9E03252BA /* Check Pods Manifest.lock */,
 				F505EDA41C7DA12100F40A21 /* Sources */,
 				F505EDA51C7DA12100F40A21 /* Frameworks */,
 				F505EDA61C7DA12100F40A21 /* Resources */,
+				336D5212348A0A7FF3BB5635 /* Embed Pods Frameworks */,
+				DD12DBADE8C2D69635141855 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -130,11 +160,60 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1EB5FF6D0D083AC9E03252BA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		336D5212348A0A7FF3BB5635 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hipstagram/Pods-Hipstagram-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DD12DBADE8C2D69635141855 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Hipstagram/Pods-Hipstagram-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F505EDA41C7DA12100F40A21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5D8472A1C7DAA1300FE0229 /* LoginViewController.swift in Sources */,
 				F505EDAE1C7DA12200F40A21 /* ViewController.swift in Sources */,
 				F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */,
 			);
@@ -245,6 +324,7 @@
 		};
 		F505EDBB1C7DA12200F40A21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 217402321B326BC2C0934F74 /* Pods-Hipstagram.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hipstagram/Info.plist;
@@ -256,6 +336,7 @@
 		};
 		F505EDBC1C7DA12200F40A21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF63A96A09AFBFA5D76D8584 /* Pods-Hipstagram.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Hipstagram/Info.plist;
@@ -284,6 +365,7 @@
 				F505EDBC1C7DA12200F40A21 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
