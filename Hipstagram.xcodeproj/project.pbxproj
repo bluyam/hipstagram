@@ -9,10 +9,17 @@
 /* Begin PBXBuildFile section */
 		A911BDF709D9340DB308596F /* Pods_Hipstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B61685E21AA79BD95A79B5F /* Pods_Hipstagram.framework */; };
 		F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */; };
-		F505EDAE1C7DA12200F40A21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505EDAD1C7DA12200F40A21 /* ViewController.swift */; };
 		F505EDB11C7DA12200F40A21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505EDAF1C7DA12200F40A21 /* Main.storyboard */; };
 		F505EDB31C7DA12200F40A21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F505EDB21C7DA12200F40A21 /* Assets.xcassets */; };
 		F505EDB61C7DA12200F40A21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F505EDB41C7DA12200F40A21 /* LaunchScreen.storyboard */; };
+		F5A77BB31C80425400690906 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BB21C80425400690906 /* HomeViewController.swift */; };
+		F5A77BB91C8042FA00690906 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BB81C8042FA00690906 /* ProfileViewController.swift */; };
+		F5A77BBB1C80430600690906 /* CaptureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BBA1C80430600690906 /* CaptureViewController.swift */; };
+		F5A77BBF1C80434E00690906 /* ProfileInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BBE1C80434E00690906 /* ProfileInfoView.swift */; };
+		F5A77BC11C80436600690906 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BC01C80436600690906 /* User.swift */; };
+		F5A77BC31C80437D00690906 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BC21C80437D00690906 /* Post.swift */; };
+		F5A77BC51C80439700690906 /* PostCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BC41C80439700690906 /* PostCollectionViewCell.swift */; };
+		F5A77BC71C804E7000690906 /* ParseClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5A77BC61C804E6F00690906 /* ParseClient.swift */; };
 		F5D8472A1C7DAA1300FE0229 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5D847291C7DAA1300FE0229 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -22,11 +29,18 @@
 		DF63A96A09AFBFA5D76D8584 /* Pods-Hipstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hipstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hipstagram/Pods-Hipstagram.release.xcconfig"; sourceTree = "<group>"; };
 		F505EDA81C7DA12100F40A21 /* Hipstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hipstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F505EDAD1C7DA12200F40A21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F505EDB01C7DA12200F40A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F505EDB21C7DA12200F40A21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F505EDB51C7DA12200F40A21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F505EDB71C7DA12200F40A21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F5A77BB21C80425400690906 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		F5A77BB81C8042FA00690906 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		F5A77BBA1C80430600690906 /* CaptureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureViewController.swift; sourceTree = "<group>"; };
+		F5A77BBE1C80434E00690906 /* ProfileInfoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileInfoView.swift; sourceTree = "<group>"; };
+		F5A77BC01C80436600690906 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		F5A77BC21C80437D00690906 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		F5A77BC41C80439700690906 /* PostCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCollectionViewCell.swift; sourceTree = "<group>"; };
+		F5A77BC61C804E6F00690906 /* ParseClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseClient.swift; sourceTree = "<group>"; };
 		F5D847291C7DAA1300FE0229 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -80,15 +94,54 @@
 		F505EDAA1C7DA12200F40A21 /* Hipstagram */ = {
 			isa = PBXGroup;
 			children = (
+				F5A77BB71C80429900690906 /* API */,
+				F5A77BB61C80427F00690906 /* Controllers */,
+				F5A77BB41C80426300690906 /* Views */,
+				F5A77BB51C80426C00690906 /* Models */,
 				F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */,
-				F505EDAD1C7DA12200F40A21 /* ViewController.swift */,
 				F505EDAF1C7DA12200F40A21 /* Main.storyboard */,
-				F5D847291C7DAA1300FE0229 /* LoginViewController.swift */,
 				F505EDB21C7DA12200F40A21 /* Assets.xcassets */,
 				F505EDB41C7DA12200F40A21 /* LaunchScreen.storyboard */,
 				F505EDB71C7DA12200F40A21 /* Info.plist */,
 			);
 			path = Hipstagram;
+			sourceTree = "<group>";
+		};
+		F5A77BB41C80426300690906 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				F5A77BBE1C80434E00690906 /* ProfileInfoView.swift */,
+				F5A77BC41C80439700690906 /* PostCollectionViewCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		F5A77BB51C80426C00690906 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				F5A77BC01C80436600690906 /* User.swift */,
+				F5A77BC21C80437D00690906 /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		F5A77BB61C80427F00690906 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				F5A77BB21C80425400690906 /* HomeViewController.swift */,
+				F5D847291C7DAA1300FE0229 /* LoginViewController.swift */,
+				F5A77BB81C8042FA00690906 /* ProfileViewController.swift */,
+				F5A77BBA1C80430600690906 /* CaptureViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		F5A77BB71C80429900690906 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				F5A77BC61C804E6F00690906 /* ParseClient.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,8 +267,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D8472A1C7DAA1300FE0229 /* LoginViewController.swift in Sources */,
-				F505EDAE1C7DA12200F40A21 /* ViewController.swift in Sources */,
 				F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */,
+				F5A77BB91C8042FA00690906 /* ProfileViewController.swift in Sources */,
+				F5A77BC11C80436600690906 /* User.swift in Sources */,
+				F5A77BB31C80425400690906 /* HomeViewController.swift in Sources */,
+				F5A77BC31C80437D00690906 /* Post.swift in Sources */,
+				F5A77BC71C804E7000690906 /* ParseClient.swift in Sources */,
+				F5A77BBF1C80434E00690906 /* ProfileInfoView.swift in Sources */,
+				F5A77BBB1C80430600690906 /* CaptureViewController.swift in Sources */,
+				F5A77BC51C80439700690906 /* PostCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

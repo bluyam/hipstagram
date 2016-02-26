@@ -13,7 +13,7 @@ import Parse
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var storyboard = UIStoryboard(name: "Main", bundle: nil)
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
@@ -27,7 +27,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://evening-river-73373.herokuapp.com/parse"
             })
         )
+        
+        // check if user is logged in.
+        if PFUser.currentUser() != nil {
+            // if there is a logged in user then load the home view controller
+            let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as UIViewController
+            window?.rootViewController = vc
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "userDidLogout", name: "userDidLogoutNotification", object: nil)
         return true
+    }
+    
+    func userDidLogout() {
+        window?.rootViewController?.dismissViewControllerAnimated(true, completion: nil)
     }
 
     func applicationWillResignActive(application: UIApplication) {

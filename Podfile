@@ -5,5 +5,6 @@ use_frameworks!
 
 target 'Hipstagram' do
 	pod 'Parse'
+	pod 'ALCameraViewController'
 end
 
