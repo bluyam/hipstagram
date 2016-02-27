@@ -122,12 +122,16 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="tintColor" red="0.85482078790664673" green="0.68396997451782227" blue="0.61959511041641235" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Submit"/>
+                                <connections>
+                                    <action selector="submitPressed:" destination="QDE-hs-Luf" eventType="touchUpInside" id="sM3-xi-c1P"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Capture" id="oK8-SQ-qZa"/>
                     <connections>
+                        <outlet property="captionField" destination="oO5-nh-tks" id="wbf-R1-N4W"/>
                         <outlet property="postPreviewImageView" destination="Mh9-EK-dIp" id="ACe-Zb-tbW"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,8 @@ class CaptureViewController: UIViewController {
     var postPreviewImage: UIImage!
     var caption: String!
     
+    @IBOutlet var captionField: UITextField!
+    
     @IBOutlet var postPreviewImageView: UIImageView!
     
     @IBAction func onAddImagePressed(sender: AnyObject) {
@@ -31,6 +33,23 @@ class CaptureViewController: UIViewController {
         }
         
         presentViewController(cameraViewController, animated: true, completion: nil)
+    }
+    
+    @IBAction func submitPressed(sender: AnyObject) {
+        if postPreviewImage != nil {
+            Post.postUserImage(postPreviewImage, withCaption: "") { (flag: Bool, error: NSError?) -> Void in
+                if error == nil {
+                    print("Image Posted Successfully!")
+                }
+                else {
+                    print("error occurred \(error?.localizedDescription)")
+                }
+            }
+        }
+        else {
+            let alertController = UIAlertController(title: "Whoops", message: "Please choose an image before posting.", preferredStyle: UIAlertControllerStyle.Alert)
+            presentViewController(alertController, animated: true, completion: nil)
+        }
     }
     
     func resize(image: UIImage, newSize: CGSize) -> UIImage {
