@@ -10,9 +10,37 @@ import UIKit
 import Parse
 
 class Post: NSObject {
-    /**
-     * Other methods
-     */
+    
+    var caption: String?
+    var commentsCount: Int?
+    var likesCount: Int?
+    var media: UIImage?
+    
+    init(object: PFObject) {
+        super.init()
+        
+        // set data
+        caption = object["caption"] as? String
+        commentsCount = object["commentsCount"] as? Int
+        likesCount = object["likesCount"] as? Int
+        
+        let mediaFile = object["media"] as! PFFile
+        // we have to query for the image data
+        mediaFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+            if imageData != nil {
+                let image = UIImage(data:imageData!)
+                self.media = image
+            }
+        }
+    }
+
+    class func PostsWithArray(array: [PFObject]) -> [Post] {
+        var posts = [Post]()
+        for object in array {
+            posts.append(Post(object: object))
+        }
+        return posts
+    }
      
      /**
      Method to post user media to Parse by uploading image file

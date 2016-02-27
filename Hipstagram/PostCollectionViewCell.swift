@@ -10,4 +10,14 @@ import UIKit
 
 class PostCollectionViewCell: UICollectionViewCell {
     
+    @IBOutlet weak var postImageView: UIImageView!
+    
+    var post: Post? {
+        didSet {
+            if post?.media != nil {
+                postImageView.image = post?.media!
+            }
+        }
+    }
+    
 }
