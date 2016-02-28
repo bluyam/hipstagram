@@ -37,7 +37,7 @@ class CaptureViewController: UIViewController {
     
     @IBAction func submitPressed(sender: AnyObject) {
         if postPreviewImage != nil {
-            Post.postUserImage(postPreviewImage, withCaption: "") { (flag: Bool, error: NSError?) -> Void in
+            Post.postUserImage(postPreviewImage, withCaption: captionField.text ?? "") { (flag: Bool, error: NSError?) -> Void in
                 if error == nil {
                     print("Image Posted Successfully!")
                 }

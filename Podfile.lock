@@ -1,16 +1,19 @@
 PODS:
   - ALCameraViewController (1.1.7)
   - Bolts/Tasks (1.6.0)
+  - JGProgressHUD (1.3.1)
   - Parse (1.12.0):
     - Bolts/Tasks (~> 1.5)
 
 DEPENDENCIES:
   - ALCameraViewController
+  - JGProgressHUD
   - Parse
 
 SPEC CHECKSUMS:
   ALCameraViewController: 15bd245a247cff0f8a038c349ac2bbe79152b686
   Bolts: f52a250053bb517ca874523c3913776359ab3def
+  JGProgressHUD: 153053a21d81208cb5f659691996bcefce6a9885
   Parse: de2c52a9a1421b91ae7594ab8ce191afd184f19b
 
 COCOAPODS: 0.39.0

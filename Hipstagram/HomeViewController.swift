@@ -14,7 +14,11 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     @IBOutlet weak var collectionView: UICollectionView!
     
     @IBAction func profileImagePressed(sender: AnyObject) {
-        
+        if let profileImage = sender as? UIButton {
+            let index = profileImage.tag
+            let author = posts![index].author!
+            self.performSegueWithIdentifier("ProfileSegue", sender: author)
+        }
     }
     
     var posts: [Post]?
@@ -22,6 +26,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
         self.setNeedsStatusBarAppearanceUpdate()
         
         // collectionView setup
@@ -110,6 +116,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     override func viewWillAppear(animated: Bool) {
         // makeQuery()
+    }
+
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let author = sender as? PFUser {
+            if let profileViewController = segue.destinationViewController as? ProfileViewController {
+                profileViewController.user = author
+            }
+        }
     }
     
     

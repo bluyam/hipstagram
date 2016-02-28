@@ -12,33 +12,16 @@ import ALCameraViewController
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
-    
     var posts: [Post]?
     var postsAsPFObjects: [PFObject]?
     
+    @IBOutlet var backgroundImage: UIImageView!
+    @IBOutlet var logoutButton: UIButton!
     @IBOutlet weak var collectionView: UICollectionView!
-    
-    var user: PFUser? {
-        didSet {
-            if user!.objectForKey("profile_photo") != nil {
-                let profileMedia = user!["profile_photo"]
-                profileMedia.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
-                    if imageData != nil {
-                        let image = UIImage(data:imageData!)
-                        // set profile image for view
-                        self.profileImageButton.setImage(image, forState: .Normal)
-                        print("this thing is happening")
-                    }
-                }
-            }
-            else {
-                let image = UIImage(named: "default_profile")
-                self.profileImageButton.setImage(image, forState: .Normal)
-            }
-        }
-    }
 
     @IBOutlet var profileImageButton: UIButton!
+    
+    var user: PFUser?
     
     // move this to the model
     @IBAction func onProfileImagePressed(sender: AnyObject) {
@@ -69,15 +52,47 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        user = PFUser.currentUser()
+        self.view.sendSubviewToBack(backgroundImage)
+        
+        if user == nil {
+            user = PFUser.currentUser()
+        }
+        else if user?.objectId != PFUser.currentUser()?.objectId {
+            logoutButton.alpha = 0
+            profileImageButton.userInteractionEnabled = false
+        }
+        
+        self.setNeedsStatusBarAppearanceUpdate()
+        
         profileImageButton.imageView?.layer.cornerRadius = 34
         
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        if user!.objectForKey("profile_photo") != nil {
+            let profileMedia = user!["profile_photo"]
+            profileMedia.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if imageData != nil {
+                    let image = UIImage(data:imageData!)
+                    print(image)
+                    // set profile image for view
+                    self.profileImageButton.setImage(image, forState: .Normal)
+                    print("this thing is happening")
+                }
+            }
+        }
+        else {
+            let image = UIImage(named: "default_profile")
+            self.profileImageButton.setImage(image, forState: .Normal)
+        }
+        
         makeQuery()
         
         // Do any additional setup after loading the view.
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle {
+        return UIStatusBarStyle.LightContent
     }
     
     func makeQuery() {

@@ -18,15 +18,19 @@ class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet var timeSinceLabel: UILabel!
     
+    @IBOutlet var captionLabel: UILabel!
+    
     var isProfileCell = false
     
     var post: Post? {
         didSet {
             timeSinceLabel.text = Post.convertDateToString((post?.createdAt)!)
             if !isProfileCell {
+                self.sendSubviewToBack(profileImageView)
                 usernameLabel.text = post?.author?.username!
                 profileImageView.layer.cornerRadius = 12
                 profileImageView.clipsToBounds = true
+                captionLabel.text = post?.caption!
             }
         }
     }

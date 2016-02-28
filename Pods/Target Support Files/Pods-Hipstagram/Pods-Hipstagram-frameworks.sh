@@ -86,10 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-Hipstagram/ALCameraViewController.framework"
   install_framework "Pods-Hipstagram/Bolts.framework"
+  install_framework "Pods-Hipstagram/JGProgressHUD.framework"
   install_framework "Pods-Hipstagram/Parse.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-Hipstagram/ALCameraViewController.framework"
   install_framework "Pods-Hipstagram/Bolts.framework"
+  install_framework "Pods-Hipstagram/JGProgressHUD.framework"
   install_framework "Pods-Hipstagram/Parse.framework"
 fi
