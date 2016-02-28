@@ -12,11 +12,19 @@ class PostCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var postImageView: UIImageView!
     
+    @IBOutlet var profileImageView: UIButton!
+    
+    @IBOutlet var usernameLabel: UILabel!
+    
+    @IBOutlet var timeSinceLabel: UILabel!
+    
     var post: Post? {
         didSet {
-            if post?.media != nil {
-                postImageView.image = post?.media!
-            }
+            usernameLabel.text = post?.author?.username!
+            print(post?.createdAt)
+            profileImageView.layer.cornerRadius = 12
+            profileImageView.clipsToBounds = true
+            
         }
     }
     

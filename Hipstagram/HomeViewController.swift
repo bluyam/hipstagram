@@ -62,8 +62,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         cell.post = posts![indexPath.item]
         // we have to query for the image data
         
-        // unfortunately, it has too look ugly here to reload the cell properly
-        // hopefully I have time to fix this up after I complete more of the project
+        // get post
         let mediaFile = postsAsPFObjects![indexPath.item]["media"] as! PFFile
         mediaFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
             if imageData != nil {
@@ -73,6 +72,27 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.posts![indexPath.item].media = image
                 print("this thing is happening")
             }
+        }
+        
+        // get profile image
+        let user = postsAsPFObjects![indexPath.item]["author"] as! PFUser
+        if user.objectForKey("profile_photo") != nil {
+            let profileMedia = user["profile_photo"]
+            profileMedia.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+                if imageData != nil {
+                    let image = UIImage(data:imageData!)
+                    cell.profileImageView.setImage(image, forState: .Normal)
+                    cell.post!.authorImage = image
+                    self.posts![indexPath.item].authorImage = image
+                    print("this thing is happening")
+                }
+            }
+        }
+        else {
+            let image = UIImage(named: "default_profile")
+            cell.profileImageView.setImage(image, forState: .Normal)
+            cell.post!.authorImage = image
+            self.posts![indexPath.item].authorImage = image
         }
         
         return cell

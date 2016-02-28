@@ -26,7 +26,7 @@ class CaptureViewController: UIViewController {
             if image != nil {
                 // save to imageview
                 let newSize = CGSize(width: 320, height: 320)
-                self.postPreviewImage = self.resize(image!, newSize: newSize)
+                self.postPreviewImage = Post.resize(image!, newSize: newSize)
                 self.postPreviewImageView.image = self.postPreviewImage
             }
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -48,21 +48,12 @@ class CaptureViewController: UIViewController {
         }
         else {
             let alertController = UIAlertController(title: "Whoops", message: "Please choose an image before posting.", preferredStyle: UIAlertControllerStyle.Alert)
+            alertController.addAction(UIAlertAction(title: "Alright.", style: UIAlertActionStyle.Cancel, handler: nil))
             presentViewController(alertController, animated: true, completion: nil)
         }
     }
     
-    func resize(image: UIImage, newSize: CGSize) -> UIImage {
-        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
-        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
-        resizeImageView.image = image
-        
-        UIGraphicsBeginImageContext(resizeImageView.frame.size)
-        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return newImage
-    }
+
     
     override func viewDidLoad() {
         super.viewDidLoad()

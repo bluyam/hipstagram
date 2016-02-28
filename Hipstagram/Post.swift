@@ -11,16 +11,21 @@ import Parse
 
 class Post: NSObject {
     
+    var author: PFUser?
+    var createdAt: NSDate?
     var media: UIImage?
     var caption: String?
     var commentsCount: Int?
     var likesCount: Int?
+    var authorImage: UIImage?
     var cachedObject: PFObject?
     
     init(object: PFObject) {
         super.init()
         
         // set data
+        author = object["author"] as? PFUser
+        createdAt = object.createdAt!
         caption = object["caption"] as? String
         commentsCount = object["commentsCount"] as? Int
         likesCount = object["likesCount"] as? Int
@@ -33,6 +38,18 @@ class Post: NSObject {
             // when callback complete continue
         }
         return posts
+    }
+    
+    class func resize(image: UIImage, newSize: CGSize) -> UIImage {
+        let resizeImageView = UIImageView(frame: CGRectMake(0, 0, newSize.width, newSize.height))
+        resizeImageView.contentMode = UIViewContentMode.ScaleAspectFill
+        resizeImageView.image = image
+        
+        UIGraphicsBeginImageContext(resizeImageView.frame.size)
+        resizeImageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return newImage
     }
      
      /**
@@ -55,6 +72,12 @@ class Post: NSObject {
         
         // Save object (following function will save the object in Parse asynchronously)
         media.saveInBackgroundWithBlock(completion)
+    }
+    
+    class func postUserProfileImage(image: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
+        let user = PFUser.currentUser()!
+        user["profile_photo"] = getPFFileFromImage(image)
+        user.saveInBackgroundWithBlock(completion)
     }
     
     /**
