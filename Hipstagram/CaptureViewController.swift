@@ -53,8 +53,6 @@ class CaptureViewController: UIViewController {
         }
     }
     
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 

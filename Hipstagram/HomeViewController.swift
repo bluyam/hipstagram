@@ -13,6 +13,10 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBAction func profileImagePressed(sender: AnyObject) {
+        
+    }
+    
     var posts: [Post]?
     var postsAsPFObjects: [PFObject]?
     
@@ -60,6 +64,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostCollectionViewCell", forIndexPath: indexPath) as! PostCollectionViewCell
         cell.post = posts![indexPath.item]
+        cell.profileImageView.tag = indexPath.item
         // we have to query for the image data
         
         // get post
@@ -106,6 +111,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     override func viewWillAppear(animated: Bool) {
         // makeQuery()
     }
+    
+    
 
     /*
     // MARK: - Navigation

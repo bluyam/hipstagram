@@ -10,7 +10,13 @@ import UIKit
 import Parse
 import ALCameraViewController
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
+    
+    
+    var posts: [Post]?
+    var postsAsPFObjects: [PFObject]?
+    
+    @IBOutlet weak var collectionView: UICollectionView!
     
     var user: PFUser? {
         didSet {
@@ -34,6 +40,7 @@ class ProfileViewController: UIViewController {
 
     @IBOutlet var profileImageButton: UIButton!
     
+    // move this to the model
     @IBAction func onProfileImagePressed(sender: AnyObject) {
         // present a camera view
         let croppingEnabled = true
@@ -64,7 +71,60 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         user = PFUser.currentUser()
         profileImageButton.imageView?.layer.cornerRadius = 34
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        makeQuery()
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func makeQuery() {
+        // construct PFQuery
+        let query = PFQuery(className: "Post")
+        query.whereKey("author", equalTo: user!)
+        query.orderByDescending("createdAt")
+        query.includeKey("author")
+        query.limit = 20
+        
+        // fetch data asynchronously
+        query.findObjectsInBackgroundWithBlock { (media: [PFObject]?, error: NSError?) -> Void in
+            if let media = media {
+                // do something with the data fetched
+                self.postsAsPFObjects = media
+                self.posts = Post.PostsWithArray(media)
+                self.collectionView.reloadData()
+            } else {
+                // handle error
+                print("error thingy")
+            }
+        }
+    }
+    
+    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return posts != nil ? posts!.count : 0
+    }
+    
+    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PostCollectionViewCell", forIndexPath: indexPath) as! PostCollectionViewCell
+        cell.isProfileCell = true
+        cell.post = posts![indexPath.item]
+        // we have to query for the image data
+        
+        // get post
+        let mediaFile = postsAsPFObjects![indexPath.item]["media"] as! PFFile
+        mediaFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
+            if imageData != nil {
+                let image = UIImage(data:imageData!)
+                cell.postImageView.image = image
+                cell.post!.media = image
+                self.posts![indexPath.item].media = image
+                print("this thing is happening")
+            }
+        }
+        
+        return cell
     }
 
     override func didReceiveMemoryWarning() {

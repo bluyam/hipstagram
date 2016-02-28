@@ -80,6 +80,25 @@ class Post: NSObject {
         user.saveInBackgroundWithBlock(completion)
     }
     
+    
+    // convert date to timestamp
+    class func convertDateToString(date: NSDate) -> String {
+        let number = Int(NSDate().timeIntervalSinceDate(date))
+        let day = number/86400
+        let hour = (number - day * 86400)/3600
+        let minute = (number - day * 86400 - hour * 3600)/60
+        let seconds = (number - day * 86400 - hour * 3600)
+        if day != 0 {
+            return String(day) + "d"
+        } else if hour != 0 {
+            return String(hour) + "h"
+        } else if minute != 0 {
+            return String(minute) + "m"
+        } else {
+            return String(seconds) + "s"
+        }
+    }
+    
     /**
      Method to post user media to Parse by uploading image file
      
