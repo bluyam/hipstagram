@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9532" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
         <!--Login View Controller-->
@@ -131,7 +131,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Capture" id="oK8-SQ-qZa"/>
+                    <tabBarItem key="tabBarItem" title="Capture" image="1456723058_camera" id="oK8-SQ-qZa"/>
                     <connections>
                         <outlet property="captionField" destination="oO5-nh-tks" id="wbf-R1-N4W"/>
                         <outlet property="postPreviewImageView" destination="Mh9-EK-dIp" id="ACe-Zb-tbW"/>
@@ -231,12 +231,79 @@
                     </navigationItem>
                     <connections>
                         <outlet property="collectionView" destination="wMN-WJ-YOO" id="Ull-id-fNG"/>
-                        <segue destination="bV5-tV-y9B" kind="push" id="gVb-eG-dNu"/>
+                        <segue destination="bV5-tV-y9B" kind="push" identifier="ProfileSegue" id="gVb-eG-dNu"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LHo-jS-uvS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="961" y="-329"/>
+        </scene>
+        <!--Search-->
+        <scene sceneID="hnl-Ox-uWO">
+            <objects>
+                <viewController id="ewr-D1-Nwb" customClass="SearchViewController" customModule="Hipstagram" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xiG-u1-2ph">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="82" sectionHeaderHeight="28" sectionFooterHeight="28" id="AlP-Xv-Qr1">
+                                <rect key="frame" x="0.0" y="20" width="320" height="499"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="UserTableViewCell" rowHeight="82" id="o3Z-lH-JSI" customClass="UserTableViewCell" customModule="Hipstagram" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="82"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o3Z-lH-JSI" id="EBx-pH-05B">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="82"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="25w-a2-vxQ">
+                                                    <rect key="frame" x="64" y="30" width="248" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="qZC-yR-l4Y">
+                                                    <rect key="frame" x="8" y="17" width="48" height="48"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="profileImageView" destination="qZC-yR-l4Y" id="GcG-a2-tmw"/>
+                                            <outlet property="userNameLabel" destination="25w-a2-vxQ" id="TMN-LI-epC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Search" image="1456723030_search" id="2Bd-bJ-1i2"/>
+                    <connections>
+                        <outlet property="tableView" destination="AlP-Xv-Qr1" id="yfY-Iu-c0Y"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vyB-Hv-CrD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="951" y="343"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="AVV-Dv-k4E">
+            <objects>
+                <viewController id="Ukl-sh-cMq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mfd-v1-Ufm">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sxj-IJ-jOe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1497" y="343"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="yxj-8K-DQL">
@@ -253,6 +320,7 @@
                         <segue destination="79X-dJ-fYc" kind="relationship" relationship="viewControllers" id="K01-Uq-uqd"/>
                         <segue destination="QDE-hs-Luf" kind="relationship" relationship="viewControllers" id="Qu3-6A-ZLf"/>
                         <segue destination="bV5-tV-y9B" kind="relationship" relationship="viewControllers" id="UtX-Pc-9Ig"/>
+                        <segue destination="ewr-D1-Nwb" kind="relationship" relationship="viewControllers" id="6W4-AQ-P7D"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sv2-vA-odB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -267,7 +335,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="519"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" alpha="0.45000000000000001" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="land" id="C3t-gS-y07">
+                            <imageView userInteractionEnabled="NO" alpha="0.5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="land" id="C3t-gS-y07">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="567"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -396,7 +464,7 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item" id="iPM-IH-RKY"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="1456723121_Profile01" id="iPM-IH-RKY"/>
                     <navigationItem key="navigationItem" title="PROFILE" id="MBH-lA-m0M"/>
                     <connections>
                         <outlet property="backgroundImage" destination="C3t-gS-y07" id="UPf-TB-Ovh"/>
@@ -413,7 +481,7 @@
         <scene sceneID="982-ke-i10">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="79X-dJ-fYc" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="A54-TJ-gfA"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="1456723000_home" id="A54-TJ-gfA"/>
                     <toolbarItems/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics" statusBarStyle="lightContent"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="vNW-lw-AAC">
@@ -433,10 +501,15 @@
         </scene>
     </scenes>
     <resources>
+        <image name="1456723000_home" width="24" height="24"/>
+        <image name="1456723030_search" width="24" height="24"/>
+        <image name="1456723058_camera" width="24" height="24"/>
+        <image name="1456723121_Profile01" width="24" height="24"/>
         <image name="default_profile" width="128" height="128"/>
         <image name="land" width="320" height="568"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="UtX-Pc-9Ig"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
 </document>

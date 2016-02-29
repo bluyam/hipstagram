@@ -8,11 +8,13 @@
 
 import UIKit
 import ALCameraViewController
+import JGProgressHUD
 
 class CaptureViewController: UIViewController {
 
     var postPreviewImage: UIImage!
     var caption: String!
+    var HUD = JGProgressHUD(style: .Dark)
     
     @IBOutlet var captionField: UITextField!
     
@@ -37,6 +39,8 @@ class CaptureViewController: UIViewController {
     
     @IBAction func submitPressed(sender: AnyObject) {
         if postPreviewImage != nil {
+            self.HUD.textLabel.text = "Posting..."
+            self.HUD.showInView(self.view)
             Post.postUserImage(postPreviewImage, withCaption: captionField.text ?? "") { (flag: Bool, error: NSError?) -> Void in
                 if error == nil {
                     print("Image Posted Successfully!")
@@ -44,6 +48,7 @@ class CaptureViewController: UIViewController {
                 else {
                     print("error occurred \(error?.localizedDescription)")
                 }
+                self.HUD.dismiss()
             }
         }
         else {

@@ -20,6 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         didPresentLogin = true
         
+        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        
         // Override point for customization after application launch.
         // Initialize Parse
         // Set applicationId and server based on the values in the Heroku settings.
@@ -37,6 +39,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             // if there is a logged in user then load the home view controller
             didPresentLogin = false
             let vc = storyboard.instantiateViewControllerWithIdentifier("TabBarController") as UIViewController
+            
             window?.rootViewController = vc
         }
         

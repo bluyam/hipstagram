@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9AA00CD01C83A2FC00BDA333 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA00CCF1C83A2FC00BDA333 /* SearchViewController.swift */; };
+		9AA00CD21C83AEA600BDA333 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AA00CD11C83AEA600BDA333 /* UserTableViewCell.swift */; };
 		A911BDF709D9340DB308596F /* Pods_Hipstagram.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3B61685E21AA79BD95A79B5F /* Pods_Hipstagram.framework */; };
 		F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */; };
 		F505EDB31C7DA12200F40A21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F505EDB21C7DA12200F40A21 /* Assets.xcassets */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		217402321B326BC2C0934F74 /* Pods-Hipstagram.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hipstagram.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Hipstagram/Pods-Hipstagram.debug.xcconfig"; sourceTree = "<group>"; };
 		3B61685E21AA79BD95A79B5F /* Pods_Hipstagram.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Hipstagram.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9AA00CCF1C83A2FC00BDA333 /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		9AA00CD11C83AEA600BDA333 /* UserTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		DF63A96A09AFBFA5D76D8584 /* Pods-Hipstagram.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Hipstagram.release.xcconfig"; path = "Pods/Target Support Files/Pods-Hipstagram/Pods-Hipstagram.release.xcconfig"; sourceTree = "<group>"; };
 		F505EDA81C7DA12100F40A21 /* Hipstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hipstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F505EDAB1C7DA12200F40A21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 			children = (
 				F5A77BBE1C80434E00690906 /* ProfileInfoView.swift */,
 				F5A77BC41C80439700690906 /* PostCollectionViewCell.swift */,
+				9AA00CD11C83AEA600BDA333 /* UserTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				F5D847291C7DAA1300FE0229 /* LoginViewController.swift */,
 				F5A77BB81C8042FA00690906 /* ProfileViewController.swift */,
 				F5A77BBA1C80430600690906 /* CaptureViewController.swift */,
+				9AA00CCF1C83A2FC00BDA333 /* SearchViewController.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -267,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F5D8472A1C7DAA1300FE0229 /* LoginViewController.swift in Sources */,
+				9AA00CD01C83A2FC00BDA333 /* SearchViewController.swift in Sources */,
 				F505EDAC1C7DA12200F40A21 /* AppDelegate.swift in Sources */,
 				F5A77BB91C8042FA00690906 /* ProfileViewController.swift in Sources */,
+				9AA00CD21C83AEA600BDA333 /* UserTableViewCell.swift in Sources */,
 				F5A77BC11C80436600690906 /* User.swift in Sources */,
 				F5A77BB31C80425400690906 /* HomeViewController.swift in Sources */,
 				F5A77BC31C80437D00690906 /* Post.swift in Sources */,

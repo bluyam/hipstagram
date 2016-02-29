@@ -10,5 +10,8 @@ import UIKit
 import Parse
 
 class User: NSObject {
-    
+    class func searchWithTerm(term: String, completion: ([PFUser]?, NSError!) -> Void) {
+        // YelpClient.sharedInstance.searchWithTerm(term, completion: completion)
+    }
+
 }

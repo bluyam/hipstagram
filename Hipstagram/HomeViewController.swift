@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import JGProgressHUD
 
 class HomeViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
 
@@ -23,12 +24,19 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
     
     var posts: [Post]?
     var postsAsPFObjects: [PFObject]?
+    var HUD: JGProgressHUD = JGProgressHUD(style: JGProgressHUDStyle.Dark)
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.navigationController!.navigationBar.barStyle = UIBarStyle.Black
         self.setNeedsStatusBarAppearanceUpdate()
+        
+        // Initialize a UIRefreshControl
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: "refreshControlAction:", forControlEvents: UIControlEvents.ValueChanged)
+        collectionView.insertSubview(refreshControl, atIndex: 0)
         
         // collectionView setup
         collectionView.dataSource = self
@@ -42,7 +50,14 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         return UIStatusBarStyle.LightContent
     }
     
-    func makeQuery() {
+    // Makes a network request to get updated data
+    // Updates the tableView with the new data
+    // Hides the RefreshControl
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        makeQuery(refreshControl.endRefreshing())
+    }
+    
+    func makeQuery(completion: Void) {
         // construct PFQuery
         let query = PFQuery(className: "Post")
         query.orderByDescending("createdAt")
@@ -50,6 +65,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         query.limit = 20
         
         // fetch data asynchronously
+        HUD.textLabel.text = "Loading..."
+        HUD.showInView(self.view)
         query.findObjectsInBackgroundWithBlock { (media: [PFObject]?, error: NSError?) -> Void in
             if let media = media {
                 // do something with the data fetched
@@ -60,6 +77,8 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 // handle error
                 print("error thingy")
             }
+            completion
+            self.HUD.dismiss()
         }
     }
     
@@ -74,6 +93,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         // we have to query for the image data
         
         // get post
+        HUD.showInView(self.view)
         let mediaFile = postsAsPFObjects![indexPath.item]["media"] as! PFFile
         mediaFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
             if imageData != nil {
@@ -83,12 +103,15 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                 self.posts![indexPath.item].media = image
                 print("this thing is happening")
             }
+            self.HUD.dismiss()
         }
         
         // get profile image
+
         let user = postsAsPFObjects![indexPath.item]["author"] as! PFUser
         if user.objectForKey("profile_photo") != nil {
             let profileMedia = user["profile_photo"]
+            HUD.showInView(self.view)
             profileMedia.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
                 if imageData != nil {
                     let image = UIImage(data:imageData!)
@@ -97,6 +120,7 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
                     self.posts![indexPath.item].authorImage = image
                     print("this thing is happening")
                 }
+                self.HUD.dismiss()
             }
         }
         else {
@@ -113,10 +137,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override func viewWillAppear(animated: Bool) {
-        // makeQuery()
-    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let author = sender as? PFUser {
@@ -126,8 +146,6 @@ class HomeViewController: UIViewController, UICollectionViewDataSource, UICollec
         }
     }
     
-    
-
     /*
     // MARK: - Navigation
 

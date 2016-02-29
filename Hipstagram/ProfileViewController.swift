@@ -9,11 +9,13 @@
 import UIKit
 import Parse
 import ALCameraViewController
+import JGProgressHUD
 
 class ProfileViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegate {
     
     var posts: [Post]?
     var postsAsPFObjects: [PFObject]?
+    var HUD: JGProgressHUD = JGProgressHUD(style: JGProgressHUDStyle.Dark)
     
     @IBOutlet var backgroundImage: UIImageView!
     @IBOutlet var logoutButton: UIButton!
@@ -35,6 +37,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                 let newSize = CGSize(width: 320, height: 320)
                 let resizedImage = Post.resize(image!, newSize: newSize)
                 self.profileImageButton.setImage(resizedImage, forState: .Normal)
+                self.HUD.textLabel.text = "Updating..."
+                self.HUD.showInView(self.view)
                 Post.postUserProfileImage(resizedImage, withCompletion: { (success: Bool, error: NSError?) -> Void in
                     if success {
                         print("success changing profile image")
@@ -42,6 +46,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                     else {
                         print("you were the chosen one")
                     }
+                    self.HUD.dismiss()
                 })
             }
             self.dismissViewControllerAnimated(true, completion: nil)
@@ -71,6 +76,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         
         if user!.objectForKey("profile_photo") != nil {
             let profileMedia = user!["profile_photo"]
+            self.HUD.textLabel.text = "Loading..."
+            self.HUD.showInView(self.view)
             profileMedia.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
                 if imageData != nil {
                     let image = UIImage(data:imageData!)
@@ -79,6 +86,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                     self.profileImageButton.setImage(image, forState: .Normal)
                     print("this thing is happening")
                 }
+                self.HUD.dismiss()
             }
         }
         else {
@@ -104,6 +112,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         query.limit = 20
         
         // fetch data asynchronously
+        self.HUD.textLabel.text = "Loading..."
+        self.HUD.showInView(self.view)
         query.findObjectsInBackgroundWithBlock { (media: [PFObject]?, error: NSError?) -> Void in
             if let media = media {
                 // do something with the data fetched
@@ -114,6 +124,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                 // handle error
                 print("error thingy")
             }
+            self.HUD.dismiss()
         }
     }
     
@@ -129,6 +140,8 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
         
         // get post
         let mediaFile = postsAsPFObjects![indexPath.item]["media"] as! PFFile
+        self.HUD.textLabel.text = "Loading..."
+        self.HUD.showInView(self.view)
         mediaFile.getDataInBackgroundWithBlock { (imageData: NSData?, error: NSError?) -> Void in
             if imageData != nil {
                 let image = UIImage(data:imageData!)
@@ -137,6 +150,7 @@ class ProfileViewController: UIViewController, UICollectionViewDataSource, UICol
                 self.posts![indexPath.item].media = image
                 print("this thing is happening")
             }
+            self.HUD.dismiss()
         }
         
         return cell
